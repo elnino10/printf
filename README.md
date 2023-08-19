@@ -5,8 +5,7 @@ The printf project showcases the implementation and customization of the c stand
 ## Authors
 
 - [@elnino10](https://www.github.com/elnino10)
-new author
-- [@elnino10](https://www.github.com/elnino10)
+- [@Denning1](https://www.github.com/Denning1)
 
 ### Compiling code
 
