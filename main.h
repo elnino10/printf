@@ -24,12 +24,12 @@
  * struct fmt - Struct operation
  *
  * @fmt: The string format.
- * @fn: The function pointer.
+ * @f: The function pointer.
  */
 typedef struct fmt
 {
-        char fmt;
-        int (*f)(va_list, char[], int, int, int, int);
+	char fmt;
+	int (*f)(va_list, char[], int, int, int, int);
 } format;
 
 
@@ -40,15 +40,15 @@ int handle_print(const char *fmt, int *ind, va_list args, char buffer[],
 
 /*print helper functions*/
 int print_ch(va_list args, char buffer[],
-	int flag, int width, int precision, int size);
+		int flag, int width, int precision, int size);
 int print_str(va_list args, char buffer[],
-	int flag, int width, int precision, int size);
+		int flag, int width, int precision, int size);
 int print_mod(va_list args, char buffer[],
-	int flag, int width, int precision, int size);
+		int flag, int width, int precision, int size);
 
 /* width handling helper functions */
 int handle_write_ch(char c, char buffer[],
-	int flag, int width, int precision, int size);
+		int flag, int width, int precision, int size);
 
 /* Funciotns to handle other specifiers */
 int get_flag(const char *format, int *i);

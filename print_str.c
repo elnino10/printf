@@ -5,7 +5,7 @@
  * print_string - Prints a string
  * @args: List a of arguments
  * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
+ * @flag:  Calculates active flags
  * @width: get width.
  * @prec: Precision specification
  * @size: Size specifier

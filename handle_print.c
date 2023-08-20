@@ -8,7 +8,7 @@
  * @buffer: Buffer array
  * @flag: Checks for active flag
  * @width: Width
- * @precision: Precisions
+ * @prec: Precisions
  * @size: Size specifification
  * Return: 1 or 2;
  */

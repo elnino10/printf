@@ -8,7 +8,7 @@
  * @width: width
  * @prec: Precision
  * @size: Size specification
- * 
+ *
  * Return: Number of chars printed
  */
 int print_mod(va_list args, char buffer[],
@@ -20,6 +20,5 @@ int print_mod(va_list args, char buffer[],
 	UNUSED(width);
 	UNUSED(prec);
 	UNUSED(size);
-    
 	return (write(1, "%%", 1));
 }
