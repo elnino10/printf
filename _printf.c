@@ -8,32 +8,41 @@
  */
 int _printf(const char *format, ...)
 {
-	int ch_count = 0, b_index = 0;
-	const char *ptr;
+	int i, ch_count = 0, b_index = 0, prints = 0;
+	int width, precision, flags, size;
 	char buffer[BUFF_SIZE];
 	va_list args;
 
-	ptr = format;
 	va_start(args, format);
 
-	ptr = format;
 	if (format == NULL)
 		return (-1);
-	while (*ptr != '\0')
+	i = 0;
+	while (format[i] != '\0')
 	{
-		if (*ptr == '%')
+		if (format[i] == '%')
 		{
 			print_buff(buffer, &b_index);
-			ptr++;
+			flags = get_flag(format, &i);
+			width = get_width(format, &i, args);
+			precision = get_prec(format, &i, args);
+			size = get_size(format, &i);
+			i++;
+			prints = handle_print(format, &i, args, buffer,
+					flags, width, precision, size);
+
+			if (prints == -1)
+				return (-1);
+			ch_count += prints;
 		}
 		else
 		{
-			buffer[b_index++] = *ptr;
+			buffer[b_index++] = format[i];
 			if (b_index == BUFF_SIZE)
 				print_buff(buffer, &b_index);
 			ch_count++;
 		}
-		ptr++;
+		i++;
 	}
 
 	print_buff(buffer, &b_index);
@@ -43,9 +52,9 @@ int _printf(const char *format, ...)
 }
 
 /**
- * print_buff - Prints the contents of the buffer if it exist
+ * print_buff - Prints the contents of the buffer if availbale
  * @buffer: Array of chars
- * @b_index: Index at which to add next char, represents the length.
+ * @b_index: Index to add next character, represents the length.
  */
 void print_buff(char buffer[], int *b_index)
 {
