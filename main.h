@@ -5,7 +5,9 @@
 #include <stdio.h>
 #include <unistd.h>
 
-int _printf(const char *format, ...);
 #define BUFF_SIZE 1024
+
+int _printf(const char *format, ...);
+void print_buff(char buffer[], int *b_index);
 
 #endif
