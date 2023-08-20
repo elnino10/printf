@@ -8,13 +8,12 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, ch_count = 0, b_index = 0, prints = 0;
-	int width, precision, flags, size;
+	int i, ch_count = 0, b_index = 0, prints = 0, width, precision, flags,
+size;
 	char buffer[BUFF_SIZE];
 	va_list args;
 
 	va_start(args, format);
-
 	if (format == NULL)
 		return (-1);
 	i = 0;
@@ -30,7 +29,6 @@ int _printf(const char *format, ...)
 			i++;
 			prints = handle_print(format, &i, args, buffer,
 					flags, width, precision, size);
-
 			if (prints == -1)
 				return (-1);
 			ch_count += prints;
@@ -44,9 +42,7 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-
 	print_buff(buffer, &b_index);
-
 	va_end(args);
 	return (ch_count);
 }
