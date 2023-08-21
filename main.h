@@ -68,11 +68,19 @@ int write_num(int ind, char buffer[],
 int print_bin(va_list args, char buffer[],
 		int flag, int width, int prec, int size);
 int print_unsigned(va_list args, char buffer[],
-           	int flag, int width, int prec, int size);
+		int flag, int width, int prec, int size);
 long int convert_unsigned(unsigned long int num, int size);
 int write_unsigned(int negative, int index,
-           	char buffer[],
-           	int flag, int width, int prec, int size);
+		char buffer[],
+		int flag, int width, int prec, int size);
+int print_octal(va_list args, char buffer[],
+		int flag, int width, int prec, int size);
+int print_hexa_num(va_list args, char map_num[], char buffer[],
+		int flag, char flag_ch, int width, int prec, int size);
+int print_hexa_lower(va_list args, char buffer[],
+		int flag, int width, int prec, int size);
+int print_hexa_upper(va_list args, char buffer[],
+		int flag, int width, int prec, int size);
 
 /*utility functions*/
 int is_digit(char ch);
