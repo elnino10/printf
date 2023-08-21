@@ -20,7 +20,8 @@ int handle_print(const char *fmt, int *arr, va_list args, char buffer[],
 
 	format fmt_type[] = {
 		{'c', print_ch}, {'s', print_str}, {'%', print_mod},
-		{'i', print_int}, {'d', print_int}, {'\0', NULL}
+		{'i', print_int}, {'d', print_int}, {'b', print_bin},
+		{'\0', NULL}
 	};
 	for (i = 0; fmt_type[i].fmt != '\0'; i++)
 		if (fmt[*arr] == fmt_type[i].fmt)
