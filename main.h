@@ -67,6 +67,12 @@ int write_num(int ind, char buffer[],
 		int length, char pad, char extra_char);
 int print_bin(va_list args, char buffer[],
 		int flag, int width, int prec, int size);
+int print_unsigned(va_list args, char buffer[],
+           	int flag, int width, int prec, int size);
+long int convert_unsigned(unsigned long int num, int size);
+int write_unsigned(int negative, int index,
+           	char buffer[],
+           	int flag, int width, int prec, int size);
 
 /*utility functions*/
 int is_digit(char ch);
