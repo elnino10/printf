@@ -13,3 +13,21 @@ int is_digit(char ch)
 
 	return (0);
 }
+
+/**
+ * convert_num_size - Converts a number to its specified size
+ * @num: Number to be converted
+ * @size: Size indication of type to be converted.
+ *
+ * Return: Converted value of num
+ */
+long int convert_num_size(long int num, int size)
+{
+	if (size == S_LONG)
+		return (num);
+	else if (size == S_SHORT)
+		return ((short)num);
+
+	return ((int)num);
+}
+

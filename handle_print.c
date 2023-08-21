@@ -1,15 +1,15 @@
-
 #include "main.h"
+
 /**
  * handle_print - Prints an argument by type
  * @fmt: Formatted string
  * @args: Arguments list
- * @ind: ind
+ * @arr: arr pointer
  * @buffer: Buffer array
  * @flag: Checks for active flag
  * @width: Width
  * @prec: Precisions
- * @size: Size specifification
+ * @size: Size specification
  *
  * Return: 1 or 2;
  */
@@ -20,7 +20,7 @@ int handle_print(const char *fmt, int *arr, va_list args, char buffer[],
 
 	format fmt_type[] = {
 		{'c', print_ch}, {'s', print_str}, {'%', print_mod},
-		{'\0', NULL}
+		{'i', print_int}, {'d', print_int}, {'\0', NULL}
 	};
 	for (i = 0; fmt_type[i].fmt != '\0'; i++)
 		if (fmt[*arr] == fmt_type[i].fmt)
