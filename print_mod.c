@@ -14,11 +14,11 @@
 int print_mod(va_list args, char buffer[],
 	int flag, int width, int prec, int size)
 {
-	UNUSED(args);
-	UNUSED(buffer);
-	UNUSED(flag);
-	UNUSED(width);
-	UNUSED(prec);
-	UNUSED(size);
+	VOID(args);
+	VOID(buffer);
+	VOID(flag);
+	VOID(width);
+	VOID(prec);
+	VOID(size);
 	return (write(1, "%%", 1));
 }

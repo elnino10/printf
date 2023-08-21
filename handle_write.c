@@ -17,8 +17,8 @@ int handle_write_ch(char c, char buffer[],
 	int i = 0;
 	char pad = ' ';
 
-	UNUSED(prec);
-	UNUSED(size);
+	VOID(prec);
+	VOID(size);
 
 	if (flag & F_ZERO)
 		pad = '0';

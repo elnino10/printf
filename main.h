@@ -6,7 +6,7 @@
 #include <unistd.h>
 
 #define BUFF_SIZE 1024
-#define UNUSED(x) (void)(x)
+#define VOID(x) (void)(x)
 
 /* flags */
 #define F_MINUS 1
@@ -46,7 +46,7 @@ int print_str(va_list args, char buffer[],
 int print_mod(va_list args, char buffer[],
 		int flag, int width, int precision, int size);
 
-/* width handling helper functions */
+/* write handling helper functions */
 int handle_write_ch(char c, char buffer[],
 		int flag, int width, int precision, int size);
 

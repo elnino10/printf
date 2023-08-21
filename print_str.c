@@ -18,11 +18,11 @@ int print_str(va_list args, char buffer[],
 	int len = 0, i;
 	char *s = va_arg(args, char *);
 
-	UNUSED(buffer);
-	UNUSED(flag);
-	UNUSED(width);
-	UNUSED(prec);
-	UNUSED(size);
+	VOID(buffer);
+	VOID(flag);
+	VOID(width);
+	VOID(prec);
+	VOID(size);
 	if (s == NULL)
 	{
 		s = "(null)";
