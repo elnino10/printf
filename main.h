@@ -58,13 +58,15 @@ int get_size(const char *format, int *i);
 
 /* Print numbers functions */
 int print_int(va_list args, char buffer[],
-	int flag, int width, int prec, int size);
+		int flag, int width, int prec, int size);
 long int convert_num_size(long int num, int size);
 int write_number_handler(int negative, int ind, char buffer[],
-           	int flag, int width, int prec, int size);
+		int flag, int width, int prec, int size);
 int write_num(int ind, char buffer[],
-           	int flag, int width, int prec,
-           	int length, char pad, char extra_char);
+		int flag, int width, int prec,
+		int length, char pad, char extra_char);
+int print_bin(va_list args, char buffer[],
+		int flag, int width, int prec, int size);
 
 /*utility functions*/
 int is_digit(char ch);
