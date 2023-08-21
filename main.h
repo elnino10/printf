@@ -50,7 +50,7 @@ int print_mod(va_list args, char buffer[],
 int handle_write_ch(char c, char buffer[],
 		int flag, int width, int precision, int size);
 
-/* Funciotns to handle other specifiers */
+/* Options handler functions */
 int get_flag(const char *format, int *i);
 int get_width(const char *format, int *i, va_list args);
 int get_prec(const char *format, int *i, va_list args);

@@ -12,23 +12,23 @@ int get_flag(const char *format, int *a)
 	/* - + 0 # ' ' */
 	/* 1 2 4 8  16 */
 	int i, index;
-	int flags = 0;
-	const char FLAGS_CHAR[] = {'-', '+', '0', '#', ' ', '\0'};
-	const int FLAGS_ARRAR[] = {F_MINUS, F_PLUS, F_ZERO, F_HASH, F_SPACE, 0};
+	const int FLAG_ARR[] = {F_MINUS, F_PLUS, F_ZERO, F_HASH, F_SPACE, 0};
+	const char FLAG_CHAR[] = {'-', '+', '0', '#', ' ', '\0'};
+	int flag = 0;
 
 	for (index = *a + 1; format[index] != '\0'; index++)
 	{
-		for (i = 0; FLAGS_CHAR[i] != '\0'; i++)
-			if (format[index] == FLAGS_CHAR[i])
+		for (i = 0; FLAG_CHAR[i] != '\0'; i++)
+			if (format[index] == FLAG_CHAR[i])
 			{
-				flags |= FLAGS_ARRAR[i];
+				flag |= FLAG_ARR[i];
 				break;
 			}
-		if (FLAGS_CHAR[i] == 0)
+		if (FLAG_CHAR[i] == 0)
 			break;
 	}
 	*a = index - 1;
-	return (flags);
+	return (flag);
 }
 
 

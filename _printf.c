@@ -8,7 +8,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, ch_count = 0, b_index = 0, prints = 0, width, precision, flags,
+	int i, ch_count = 0, b_index = 0, prints = 0, width, prec, flag,
 size;
 	char buffer[BUFF_SIZE];
 	va_list args;
@@ -22,13 +22,13 @@ size;
 		if (format[i] == '%')
 		{
 			print_buff(buffer, &b_index);
-			flags = get_flag(format, &i);
+			flag = get_flag(format, &i);
 			width = get_width(format, &i, args);
-			precision = get_prec(format, &i, args);
+			prec = get_prec(format, &i, args);
 			size = get_size(format, &i);
 			i++;
 			prints = handle_print(format, &i, args, buffer,
-					flags, width, precision, size);
+					flag, width, prec, size);
 			if (prints == -1)
 				return (-1);
 			ch_count += prints;
@@ -48,9 +48,9 @@ size;
 }
 
 /**
- * print_buff - Prints the contents of the buffer if availbale
- * @buffer: Array of chars
- * @b_index: Index to add next character, represents the length.
+ * print_buff - Prints the contents of the buffer
+ * @buffer: Character array
+ * @b_index: buffer length.
  */
 void print_buff(char buffer[], int *b_index)
 {
