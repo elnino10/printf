@@ -91,3 +91,57 @@ int write_num(int ind, char buffer[],
 	return (write(1, &buffer[ind], length));
 }
 
+/**
+ * write_unsigned - Writes unsigned integer
+ * @negative: Number indicating if the num is negative
+ * @index: Index at which the number starts in the buffer
+ * @buffer: Array of chars
+ * @flag: Flag specifiers
+ * @width: Width specifier
+ * @prec: Precision
+ * @size: Size specification
+ *
+ * Return: written character
+ */
+int write_unsigned(int negative, int index,
+		char buffer[],
+		int flag, int width, int prec, int size)
+{
+	/* The number is stored from right and starts at i */
+	char pad = ' ';
+	int len = BUFF_SIZE - index - 1, i = 0;
+
+	VOID(negative);
+	VOID(size);
+
+	if (prec == 0 && index == BUFF_SIZE - 2 && buffer[index] == '0')
+		return (0);
+	if (prec > 0 && prec < len)
+		pad = ' ';
+
+	while (prec > len)
+	{
+		buffer[--index] = '0';
+		len++;
+	}
+	if ((flag & F_ZERO) && !(flag & F_MINUS))
+		pad = '0';
+	if (width > len)
+	{
+		for (i = 0; i < width - len; i++)
+			buffer[i] = pad;
+
+		buffer[i] = '\0';
+		if (flag & F_MINUS) /* Asign extra character to buffer left*/
+		{
+			return (write(1, &buffer[index], len) + write(1, &buffer[0], i));
+		}
+		else /* Asign extra char to padding left*/
+		{
+			return (write(1, &buffer[0], i) + write(1, &buffer[index], len));
+		}
+	}
+
+	return (write(1, &buffer[index], len));
+}
+

@@ -31,3 +31,20 @@ long int convert_num_size(long int num, int size)
 	return ((int)num);
 }
 
+/**
+ * convert_unsigned - Converts a number to specific size
+ * @num: Number to be converted
+ * @size: Indication of conversion type
+ *
+ * Return: Converted value of num
+ */
+long int convert_unsigned(unsigned long int num, int size)
+{
+	if (size == S_LONG)
+		return (num);
+	else if (size == S_SHORT)
+		return ((unsigned short)num);
+
+	return ((unsigned int)num);
+}
+
