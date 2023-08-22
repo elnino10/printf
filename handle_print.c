@@ -22,7 +22,8 @@ int handle_print(const char *fmt, int *arr, va_list args, char buffer[],
 		{'c', print_ch}, {'s', print_str}, {'%', print_mod},
 		{'i', print_int}, {'d', print_int}, {'b', print_bin},
 		{'u', print_unsigned}, {'o', print_octal},
-		{'x', print_hexa_lower}, {'X', print_hexa_upper}, {'\0', NULL}
+		{'x', print_hexa_lower}, {'X', print_hexa_upper},
+		{'p', print_pointer}, {'\0', NULL}
 	};
 	for (i = 0; fmt_type[i].fmt != '\0'; i++)
 		if (fmt[*arr] == fmt_type[i].fmt)
