@@ -85,6 +85,8 @@ int print_hexa_upper(va_list args, char buffer[],
 
 int print_pointer(va_list args, char buffer[],
 		int flag, int width, int prec, int size);
+int print_reverse(va_list args, char buffer[],
+           	int flag, int width, int prec, int size);
 
 /*utility functions*/
 int is_digit(char ch);
