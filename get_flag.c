@@ -13,7 +13,7 @@ int get_flag(const char *format, int *a)
 	/* 1 2 4 8  16 */
 	int i, index;
 	const int FLAG_ARR[] = {F_MINUS, F_PLUS, F_ZERO, F_HASH, F_SPACE, 0};
-	const char FLAG_CHAR[] = {'-', '0', '#', ' ', '\0'};
+	const char FLAG_CHAR[] = {'-', '+', '0', '#', ' ', '\0'};
 	int flag = 0;
 
 	for (index = *a + 1; format[index] != '\0'; index++)
